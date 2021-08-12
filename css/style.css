@@ -1,0 +1,347 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,400italic,700|Sansita+One);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+html{
+  scroll-behavior: smooth;
+  font-size: 62.5%;/*It makes 1rem = 10rem not 16rem*/
+}
+
+body{
+  scroll-behavior: smooth;
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 5%;
+  background-color: #24252a;
+  position: fixed; 
+  top: 0%; 
+  width: 100%;
+  z-index: 999;
+}
+
+.logo {
+  cursor: pointer;
+}
+                /*maximum text format */
+.nav__links a,.Login,.overlay__content a{
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+
+.nav__links {
+  list-style: none;
+  display: flex;
+}
+
+.nav__links li {
+  padding: 0rem 2rem;
+}
+
+.nav__links li a {
+  transition: color 0.3s ease 0s;
+  position: relative;
+}
+
+
+.nav__links li a::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: .2rem;
+  top: 100%;
+  left: 0;
+  background: #edf0f1;
+  transition: transform 0.5s;
+  transform: scaleX(0);
+  transform-origin: center;
+}
+.nav__links li a:hover {
+  color: #0088a9;
+}
+.nav__links li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: center;
+}
+
+.Login {
+  padding: .9rem 1rem;
+  background: linear-gradient(120deg,#2980b9, #24252a);
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease 0s;
+}
+
+/* .Login:hover {
+  background: linear-gradient(120deg,#2980b9, #24252a);
+} */
+
+
+.right ul li a{
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  color:var(--bg-color);
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+  text-decoration: none;
+
+}
+.right ul li a:hover {
+  color: #0088a9;
+}
+
+.right img{
+  margin: 0 1rem;
+}
+
+.right a{
+  text-align: right;
+}
+
+.right ul li{
+  position: relative;
+}
+
+.right ul li .dropdown{
+  position: absolute;
+  top: 6.5rem;
+  right: -4.5rem;
+  background:var(--font-color);
+  padding: 1.5rem 2.5rem;
+  border-radius: .5rem;
+  display: none;
+}
+
+.right ul li .dropdown .fas{
+  margin-right: .5rem;
+  
+}
+
+.right ul li .dropdown:before{
+  content: "";
+  position: absolute;
+  top: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1rem solid;
+  border-color: transparent transparent #fff transparent;
+}
+.right ul li.active .dropdown{
+  display: block;
+}
+
+#profile{
+  border-radius: 50%;
+  
+}
+
+
+
+                                    /* Dark Theme */
+
+
+
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+}
+.theme-switch {
+  display: inline-block;
+  height: 2rem;
+  position: relative;
+  width: 4.5rem;
+}
+
+.theme-switch input {
+  display:none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: var(--slider-color);
+  bottom: 0rem;
+  content: "";
+  height: 2rem;
+  left: 0rem;
+  position: absolute;
+  transition: .4s;
+  width: 2rem;
+}
+
+input:checked + .slider {
+  background-color: #2980b9;
+}
+
+input:checked + .slider:before {
+  transform: translateX(2.6rem);
+}
+
+.slider.round {
+  border-radius: 3.4rem;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+:root {
+  --primary-color: #2980b9;
+  --secondary-color: #536390;
+  --font-color: black;
+  --bg-color: #fff;
+  --heading-color: #24252a;
+  --slider-color:#fff;
+}
+
+[data-theme="dark"] {
+  --primary-color: #9A97F3;
+  --secondary-color: #818cab;
+  --font-color: #fff;
+  --bg-color: #24252a;
+  --heading-color: #24252a;
+  --slider-color:#ccc;
+}
+
+
+                  /*Container*/
+.container{
+  display: grid;
+  font-family: "Montserrat", sans-serif;
+  grid-template-rows:80rem 80rem 80rem 80rem;
+}
+
+
+
+                                /*Section:1*/
+.sec-1{
+  background-color: var(--bg-color);
+}
+
+.responsive{
+  width: 100%;
+  height: 80vh;
+  min-height: 55rem;
+  text-align: center;
+  
+}
+
+
+
+                                  /* Section:- 2 */
+
+.sec-2{
+  background-color:var(--bg-color);
+}
+
+.cards {
+  display: flex;
+
+  /* Put a card in the next row when previous cards take all width */
+  flex-wrap: wrap;
+
+  margin-left: 1vw;
+  margin-right: 1vw;
+
+}
+
+.cards__item {
+  /* There will be 4 cards per row */
+  flex-basis: 25%;
+  padding-left: .8rem;
+  padding-right: .8rem;
+  box-shadow: .5rem .5rem 3rem rgba(0, 0, 0, 0.07);
+  height: 28vh;
+  width: 10vw;
+  cursor: pointer;
+  border-radius: 1.5rem;
+}
+.shop_img{
+  margin-top: 3vh;
+  margin-left: 7vw;
+  height: 70%;
+  width: 40%;
+  border-radius: 50%;
+}
+.cards__item a{
+  font-family: "Montserrat", sans-serif;
+  font-size: 1vw;
+  color: var(--font-color);
+  text-decoration: none;
+}
+
+                                  /* Section:-3 */
+.sec-3{
+  background-color:var(--bg-color);
+  color: var(--font-color);
+}
+
+
+
+
+                                  /* Section:-4 */
+
+.sec4{
+  background-color:var(--bg-color);
+  width: 50%;
+  height: 100vh;
+  transform: translate(90%, -7%);
+  
+}
+
+
+
+
+
+
+
+
+
+
+                  /*Responsiveness*/
+
+@media screen and (max-height: 480px) {
+  /* .overlay .close {
+    font-size: 4rem;
+    top: 1.5rem;
+    right: 3.5rem;
+  } */
+  html{
+    font-size: 40%;
+  }
+  
+  
+}
+
+@media only screen and (max-width: 1130px) {
+  .nav__links{
+    display: none;
+  }
+  /* .menu {
+    display: initial;
+  } */
+  html{
+    font-size: 60%;
+  }
+}
